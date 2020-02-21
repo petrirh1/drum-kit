@@ -16,6 +16,8 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener('keydown', e => {
+	e.preventDefault(); // prevents firing search on firefox when key is being pressed
+
 	if (!allowedKeys.includes(e.key.toUpperCase())) return;
 
 	const newAudios = Array.from(audios); // converts node list to array
